@@ -1,8 +1,8 @@
 workspace {
 
     model {
-        user_anonymous = person "Anonymous User" "An user who logs to the application as anonymous. This user is limited in content and the number of api calls before being asked to login again."
-        user_simple_authentication = person "Simple User" "An user that logs to the application with her credentials (valid email). This user is limited in content."
+        user_anonymous = person "Anonymous User" "A user who logs to the application as anonymous. This user is limited in content and the number of api calls before being asked to login again."
+        user_simple_authentication = person "Simple User" "A user that logs to the application with her credentials (valid email). This user is limited in content."
         user_premium = person "Premium User" "This user has signed a contract and authenticates through the eDesk platform. She can access extra information to the data with no restrictions"
         
         group "Commission" {
@@ -13,7 +13,7 @@ workspace {
             systme_myentities = softwareSystem "MyEntities" "The agent internal platform"
             system_microservices = softwareSystem "Micro Services" "The microservices platorm"
             
-            user_anonymous -> system_entity_catalog "Uses"
+            user_anonymous -> system_entity_catalog "limited use"
             user_simple_authentication -> system_entity_catalog "Uses"
             user_premium -> user_compliance "signs the api contract"
             user_premium -> system_edesk "authenticate and manage credentials"
